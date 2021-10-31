@@ -8,9 +8,10 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
   tagline: 'Documentation for MooPay products integrations, and Dinosaurs are cool',
   url: 'https://docs.moopay.live',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
+  trailingSlash: true,
   organizationName: 'MooPay', // Usually your GitHub org/user name.
   projectName: 'docs', // Usually your repo name.
   presets: [
@@ -22,13 +23,13 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/MooPay/docs',
+          routeBasePath: '/'
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          editUrl:
-            'https://github.com/MooPay/docs',
-        },
+        debug: undefined,
+        blog: false,
+        // Will be passed to @docusaurus/plugin-content-pages (false to disable)
+        pages: false,
+        sitemap: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
