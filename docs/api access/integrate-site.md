@@ -18,6 +18,7 @@ Following example show how to trigger a payment flow on your website.
 
 ```
 <button id="pay_now">Pay now</button>
+<script src="https://pay.testnet.moopay.live/public/embed.js" ></script>
 <script>
   document.querySelector('#pay_now').addEventListener('click', async () => {
     const generateOrder = await fetch(YOUR_ORDER_CREATION_URL);
