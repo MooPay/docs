@@ -21,17 +21,3 @@ You need to verify your email address before you can accept payments, button wil
 
 :::
 ![Copy Instructions](/setup/screen-rendered-button.png)
-
-## Payment notification
-
-You can listen to payment success notification on your page in your Javascript code by listening to the dispatched Event.
-
-```
-document.body.addEventListener('MooPay.Payment.Success', (event) => {
-  // code : Product code
-  // hash : Transaction hash that you can validate onchain or with *moopay api*
-  // frame : IFrame id for the button
-  const {code, hash, frame} = event;
-  // rest of the code ...
-});
-```
