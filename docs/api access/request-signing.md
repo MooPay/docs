@@ -1,13 +1,14 @@
 ---
-sidebar_label: Rest API
+sidebar_label: Request Signing
 sidebar_position: 2
 ---
 
-# Rest API
+# Request Signing
 
 All requests to the MooPay server require you to sign the request.
 Only __POST__ requests are handled.
 
+API Keys are available under `Settings > Accounts > API Keys` section of your dashboard
 
 ## Signing
 
@@ -28,6 +29,8 @@ __MOO-SIGN__: SHA256 HMAC of the following three strings, using your API secret
 
   const postBody = {};
   postBody['transaction'] = '0x01c483d2deb658e7cd6beea753aad0e176ea508b517b01eab9b45bf8e03b3a15';
+
+  // SORT postBody by keys in increasing order
   const postBodyJson = JSON.stringify(postBody);
 
   // MOO-TS
@@ -41,37 +44,4 @@ __MOO-SIGN__: SHA256 HMAC of the following three strings, using your API secret
   // MOO-SIGN
   const signature = hmac.update(toSign).digest('hex');
 
-```
-
-## API
-
-### /v1/validate-payment
-
-Validate transaction details
-
-```js title='request body'
-{"transaction": "0x01c483d2deb658e7cd6beea753aad0e176ea508b517b01eab9b45bf8e03b3a15"}
-```
-
-```js title='response structure if valid transaction hash(formatted JSON response)'
-{
-    "success": true,
-    "data": {
-        "payer": {
-            "name": "payer_name",
-            "email": "payer_email_address",
-            "wallet": "payer_account_address"
-        },
-        "product": {
-            "code": "MooPay_Product_Code",
-            "chain": chain_id, // number
-            "amount": "paid_amount",
-            "name": "product_name"
-        },
-        "transaction": "0x01c483d2deb658e7cd6beea753aad0e176ea508b517b01eab9b45bf8e03b3a15",
-        "status": "validated", // *paid* if transaction is yet to be validated
-        "paidAt": 1635645700000, // transaction paid at
-        "validatedAt": 1635645710000 // transaction validated at
-    }
-}
 ```
