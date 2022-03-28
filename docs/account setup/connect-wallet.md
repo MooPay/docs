@@ -1,5 +1,5 @@
 ---
-sidebar_label: Account Setup
+sidebar_label: Connect Wallet
 sidebar_position: 2
 ---
 
