@@ -9,8 +9,8 @@ sidebar_position: 3
 
 <table >
 <tbody>
-<tr><td>Base Url</td><td><strong>https://api.testnet.moopay.live</strong></td></tr>
-<tr><td>End point</td><td><strong>/api/v2/order</strong></td></tr>
+<tr><td>Base Url</td><td><strong>https://payments.testnet.moopay.live</strong></td></tr>
+<tr><td>End point</td><td><strong>/v2/order</strong></td></tr>
 <tr><td>Request method</td><td><strong>POST</strong></td></tr>
 </tbody>
 </table>

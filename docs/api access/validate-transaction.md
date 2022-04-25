@@ -9,8 +9,8 @@ You can validate the transaction information from our server, by passing the tra
 ### Basic Info
 <table >
 <tbody>
-<tr><td>Base Url</td><td><strong>https://api.testnet.moopay.live</strong></td></tr>
-<tr><td>End point</td><td><strong>/api/v2/validate-payment</strong></td></tr>
+<tr><td>Base Url</td><td><strong>https://payments.testnet.moopay.live</strong></td></tr>
+<tr><td>End point</td><td><strong>/v2/validate-payment</strong></td></tr>
 <tr><td>Request method</td><td><strong>POST</strong></td></tr>
 </tbody>
 </table>
