@@ -1,10 +1,10 @@
 ---
-sidebar_label: Validate Transaction
+sidebar_label: Validate Payment
 sidebar_position: 4
 ---
 
-# Transaction validation
-You can validate the transaction information from our server, by passing the transaction hash in the request body
+# Payment validation
+You can validate the payment information from our server, by passing the transaction hash in the request body
 
 ### Basic Info
 <table >
@@ -32,21 +32,26 @@ You can validate the transaction information from our server, by passing the tra
         },
         "product": { // if a product was used to create the order
             "code": "MooPay_Product_Code",
-            "chain": chain_id, // number
-            "amount": "paid_amount",
-            "name": "product_name"
         },
-        "order": "order_id_moopay*,
+        "order": {
+            "amount": ".01", // amount specified while creating order.
+            "fiat": "USD" // fiat, if specifed during order creation
+            "token": "ETH" // if specified during order creation
+        },
         "transaction": "0x01c483d2deb658e7cd6beea753aad0e176ea508b517b01eab9b45bf8e03b3a15",
         "status": "validated", // *paid* if transaction is yet to be validated, or *failed*
         "paidAt": 1635645700000, // transaction paid at
         "validatedAt": 1635645710000 // transaction validated at
         "merchantExtra": "merchant_field data in Order create*,
         "payment": {
-            fiat: "",
-            rate: "",
-            token: "",
-            address: "",
+            "network": "network name", // read this, in case network id is not available, like Solana/NEAR
+            "network_id": "network_id_for_transaction",
+            "token": {
+                fiat: "",
+                rate: "",
+                token: "",
+                address: "",
+            }
         }
     }
 }
