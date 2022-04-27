@@ -30,7 +30,6 @@ __MOO-SIGN__: SHA256 HMAC of the following three strings, using your API secret
   const postBody = {};
   postBody['transaction'] = '0x01c483d2deb658e7cd6beea753aad0e176ea508b517b01eab9b45bf8e03b3a15';
 
-  // SORT postBody by keys in increasing order
   const postBodyJson = JSON.stringify(postBody);
 
   // MOO-TS
